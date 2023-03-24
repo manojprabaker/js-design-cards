@@ -1,0 +1,33 @@
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
+}
+body{
+	font-size:16px;
+}
+.row {
+	display:flex;
+	flex-wrap:wrap;
+}
+.col {
+	width:25%;
+	padding:12px;
+}
+.col-img {
+	width:100%;
+}
+.col-item {
+	box-shadow:2px 2px 5px #bbb1c1;
+}
+.rating {
+	padding:5px;
+	font-size:15px;
+	color:#000;
+	display:inline-block;
+}
+.cuisine {
+	padding:5px 0;
+	color:#444;
+	font-size:15px;
+}
