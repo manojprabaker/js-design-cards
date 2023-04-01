@@ -64,6 +64,11 @@ cnt.appendChild(cards);
 console.log(cards);
 
 foodList.forEach(function(e){
+	// var clsName=e.name;
+	// var clss=clsName.replace(/\s/g, '');
+	// console.log(clss);
+	
+	
 	let div=document.createElement("div");
 	div.classList.add("col");
 	cards.appendChild(div);
@@ -87,11 +92,66 @@ foodList.forEach(function(e){
 	cuisine.innerHTML=e.cuisine;
 	div2.appendChild(cuisine);
 	
-	let rate=document.createElement("p");
+	
+	
+	let rate=document.createElement("span");
 	rate.classList.add("rating");
 	rate.innerHTML=e.rating;
 	div2.appendChild(rate);
+	
+	
+	let addcartdiv=document.createElement("div");
+	addcartdiv.setAttribute("class","add-cart");
+	div2.appendChild(addcartdiv);
   
+  let plusbtn=document.createElement("button");
+  plusbtn.innerHTML="+";
+addcartdiv.appendChild(plusbtn);
+plusbtn.setAttribute("class","plus-btn");
+
+
+
+let inputval=document.createElement("input");
+inputval.type="text";
+//inputval.classList.add(clss);
+addcartdiv.appendChild(inputval);
+inputval.value=1;
+var val =inputval.value;
+
+
+let minusbtn=document.createElement("button");
+minusbtn.innerHTML="--";
+addcartdiv.appendChild(minusbtn);
+minusbtn.setAttribute("class","minus-btn");
+
+//let val=parseInt(document.querySelector().value);
+plusbtn.addEventListener("click",addFun);
+function addFun()
+{
+	//let val=parseInt(document.querySelector(".values-input").value);
+	console.log(val);
+	val++;
+	plusbtn.nextElementSibling.value=val;
+	//document.querySelector("." + clss).value=val;
+}
+
+minusbtn.addEventListener("click",subFun);
+function subFun()
+{
+	//let val=parseInt(document.querySelector(".values-input").value);
+	
+	console.log(val);
+	if(val<=0)
+	{
+		val;
+	}
+	else
+	{
+	val--;
+	}
+	minusbtn.previousElementSibling.value=val;
+	//document.querySelector("." + clss).value=val;
+}
   
 	if(e.rating<2.9)
 	{
